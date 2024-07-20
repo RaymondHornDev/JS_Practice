@@ -6,6 +6,7 @@ function node_maker(value) {
     next: null,
     prev: null,
   };
+  return node;
 }
 
 let que = {
@@ -21,16 +22,19 @@ let que = {
     } else {
       let node = this.head;
       this.head = node_maker(value);
-      this.head.prev = node;
-      node.next = this.head;
+      this.head.next = node;
+      node.prev = this.head;
       this.size++;
+      //console.log(this.size);
     }
   },
 
   pop: function () {
     if (this.tail != null) {
       let node = this.tail;
-      this.tail = node.prev;
+
+      this.tail = this.tail.prev;
+
       if (this.tail == null) {
         this.head = null;
       } else {
@@ -38,8 +42,10 @@ let que = {
         node.prev = null;
       }
       this.size--;
+      console.log(this.size);
       return node;
     }
+    return;
   },
 };
 
@@ -52,8 +58,8 @@ function Fill(list, value, que) {
 
 function Empty(que) {
   if (que.size > 0) {
-    let node = que.pop();
-    console.log(node.value);
+    let loc_node = que.pop();
+    //console.log(node);
     Empty(que);
   }
 }
