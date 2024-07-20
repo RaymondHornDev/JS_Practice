@@ -1,4 +1,4 @@
-/* Just gunna go for it */
+/* First stab at a binary tree in JS */
 
 function node_maker(value) {
   let node = {
