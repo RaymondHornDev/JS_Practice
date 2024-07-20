@@ -45,6 +45,26 @@ let tree = {
       this.inorder(node.right);
     }
   },
+
+  preo_rder: function (node) {
+    console.log(node.value);
+    if (node.left != null) {
+      this.pre_order(node.left);
+    }
+    if (node.right != null) {
+      this.pre_order(node.right);
+    }
+  },
+
+  post_order: function (node) {
+    if (node.left != null) {
+      this.post_order(node.left);
+    }
+    if (node.right != null) {
+      this.post_order(node.right);
+    }
+    console.log(node.value);
+  },
 };
 
 function Fill(list, value, passed_tree) {
@@ -59,3 +79,5 @@ let my_arr = [0, 1, 2, 3, 4, 5, 6];
 Fill(my_arr, 0, tree);
 
 tree.inorder(tree.root);
+tree.post_order(tree.root);
+tree.post_order(tree.root);
