@@ -42,3 +42,12 @@ let que = {
     }
   },
 };
+
+function Fill(list, value, que) {
+  if (value < list.length) {
+    que.push(list[value]);
+    Fill(list, value + 1, que);
+  }
+}
+
+let my_arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
