@@ -13,10 +13,10 @@ let stack = {
   size: 0,
 
   push: function (value) {
+    let node = node_maker(value);
     if (this.top == null) {
-      this.top = node_maker(value);
+      this.top = node;
     } else {
-      let node = node_maker(value);
       node.next = this.top;
       this.top = node;
     }
