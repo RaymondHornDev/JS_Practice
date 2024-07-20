@@ -50,4 +50,15 @@ function Fill(list, value, que) {
   }
 }
 
+function Empty(que) {
+  if (que.size > 0) {
+    let node = que.pop();
+    console.log(node.value);
+    Empty(que);
+  }
+}
+
 let my_arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+Fill(my_arr, 0, que);
+Empty(que);
