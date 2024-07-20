@@ -46,7 +46,7 @@ let tree = {
     }
   },
 
-  preo_rder: function (node) {
+  pre_order: function (node) {
     console.log(node.value);
     if (node.left != null) {
       this.pre_order(node.left);
@@ -79,5 +79,5 @@ let my_arr = [0, 1, 2, 3, 4, 5, 6];
 Fill(my_arr, 0, tree);
 
 tree.in_order(tree.root);
-tree.post_order(tree.root);
+tree.pre_order(tree.root);
 tree.post_order(tree.root);
