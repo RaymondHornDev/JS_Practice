@@ -36,13 +36,13 @@ let tree = {
     }
   },
 
-  inorder: function (node) {
+  in_order: function (node) {
     if (node.left != null) {
-      this.inorder(node.left);
+      this.in_order(node.left);
     }
     console.log(node.value);
     if (node.right != null) {
-      this.inorder(node.right);
+      this.in_order(node.right);
     }
   },
 
@@ -78,6 +78,6 @@ let my_arr = [0, 1, 2, 3, 4, 5, 6];
 
 Fill(my_arr, 0, tree);
 
-tree.inorder(tree.root);
+tree.in_order(tree.root);
 tree.post_order(tree.root);
 tree.post_order(tree.root);
