@@ -25,7 +25,6 @@ let que = {
       this.head.next = node;
       node.prev = this.head;
       this.size++;
-      //console.log(this.size);
     }
   },
 
@@ -42,7 +41,6 @@ let que = {
         node.prev = null;
       }
       this.size--;
-      console.log(this.size);
       return node;
     }
     return;
@@ -59,7 +57,7 @@ function Fill(list, value, que) {
 function Empty(que) {
   if (que.size > 0) {
     let loc_node = que.pop();
-    //console.log(node);
+    console.log(loc_node.value);
     Empty(que);
   }
 }
