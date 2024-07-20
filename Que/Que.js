@@ -17,13 +17,13 @@ let que = {
     if (this.head == null) {
       this.head = node_maker(value);
       this.tail = this.head;
-      size++;
+      this.size++;
     } else {
       let node = this.head;
       this.head = node_maker(value);
       this.head.prev = node;
       node.next = this.head;
-      size++;
+      this.size++;
     }
   },
 
@@ -37,7 +37,7 @@ let que = {
         this.tail.next = null;
         node.prev = null;
       }
-      size--;
+      this.size--;
       return node;
     }
   },
