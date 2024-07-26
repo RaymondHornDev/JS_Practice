@@ -1,0 +1,25 @@
+let main_div_top = document.getElementById('MainDiv-top');
+let main_div_center = document.getElementById('MainDiv-center');
+let main_div_bottom = document.getElementById('MainDiv-bottom');
+
+if (main_div_top){
+  main_div_top.innerHTML += '<h1 id="top">Top</h1>';
+}else{
+  console.log('Main Div top not found');
+}
+
+if (main_div_center){
+  main_div_center.innerHTML += '<h1 id="cen">Center</h1>';
+}else{
+  console.log('Main Div center not found');
+}
+
+if (main_div_bottom){
+  main_div_bottom.innerHTML += '<h1 id="bott">Bottom</h1>';
+}else{
+  console.log('Main Div bottom not found');
+}
+
+//main_div_top.append('Im Rick James!');
+
+let inner_h1_top = document.getElementById('top');
