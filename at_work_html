@@ -1,0 +1,12 @@
+<!doctype html>
+<html> 
+ <head></head> 
+ <body> 
+  <h1> JS Practice </h1> 
+  <div id="MainDiv"> 
+   <div id="MainDiv-top"></div> 
+   <div id="MainDiv-center"></div> 
+   <div id="MainDiv-bottom"></div> 
+  </div> 
+ </body>
+</html>
