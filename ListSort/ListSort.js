@@ -19,6 +19,8 @@ let list = {
       this.head = node_maker(value);
       this.tail = this.head;
       this.has_nodes = true;
+    } else {
+      this.recursive_add(this.head, value);
     }
   },
 
