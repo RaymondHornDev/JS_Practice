@@ -34,9 +34,7 @@ let list = {
       }
     } else {
       loc_node = node_maker(value);
-
       loc_node.next = node;
-
       if (node.prev == null) {
         this.head = loc_node;
       } else {
