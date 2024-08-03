@@ -1,8 +1,10 @@
+/* First stab at a sort list in javascript */
+
 node_maker = function (value) {
   let node = {
     value: value,
-    left: null,
-    right: null,
+    next: null,
+    prev: null,
   };
   return node;
 };
@@ -17,6 +19,11 @@ let list = {
       this.head = node_maker(value);
       this.tail = this.head;
       this.has_nodes = true;
+    }
+  },
+
+  recursive_add: function (node, value) {
+    if (value < node.value) {
     }
   },
 };
