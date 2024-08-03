@@ -26,6 +26,13 @@ let list = {
 
   recursive_add: function (node, value) {
     if (value < node.value) {
+      let new_node = node_maker(value);
+
+      if (node === this.head) {
+        this.head = new_node;
+      }
+      new_node.next = node;
+      node.prev = new_node;
     }
   },
 };
