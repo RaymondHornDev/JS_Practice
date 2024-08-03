@@ -25,19 +25,25 @@ let list = {
   },
 
   recursive_add: function (node, value) {
-    if (value < node.value) {
-      let new_node = node_maker(value);
-      if (node == this.head) {
-        this.head = new_node;
-      }
-      new_node.next = node;
-      node.prev = new_node;
-    } else {
+    if (node.value > value) {
       if (node.next == null) {
         node.next = node_maker(value);
+        node.next.prev = node;
       } else {
         this.recursive_add(node.next, value);
       }
+    } else {
+      loc_node = node_maker(value);
+
+      loc_node.next = node;
+
+      if (node.prev == null) {
+        this.head = loc_node;
+      } else {
+        node.prev.next = loc_node;
+        loc_node.prev = node.prev;
+      }
+      node.prev = loc_node;
     }
   },
 
@@ -56,8 +62,8 @@ let list = {
 };
 
 fill = function (arr, list) {
-  for (item in arr) {
-    list.push(item);
+  for (let i = 0; i < arr.length; i++) {
+    list.push(arr[i]);
   }
 };
 
@@ -65,11 +71,11 @@ empty = function (list) {
   if (list.has_nodes == true) {
     let ret_ob = list.pop();
     console.log(ret_ob.value);
+    empty(list);
   }
 };
 
-let loc_list = new list();
 let loc_arr = [1, 5, 8, 4, 7, 2, 0, 9];
 
-fill(loc_arr, loc_list);
-empty(loc_list);
+fill(loc_arr, list);
+empty(list);
