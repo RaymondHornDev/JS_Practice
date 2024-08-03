@@ -40,4 +40,36 @@ let list = {
       }
     }
   },
+
+  pop: function () {
+    let ret_node = this.head;
+    this.head = this.head.next;
+    if (this.head != null) {
+      this.head.prev = null;
+      ret_node.next = null;
+    } else {
+      this.tail = null;
+      this.has_nodes = false;
+    }
+    return ret_node;
+  },
 };
+
+fill = function (arr, list) {
+  for (item in arr) {
+    list.push(item);
+  }
+};
+
+empty = function (list) {
+  if (list.has_nodes == true) {
+    let ret_ob = list.pop();
+    console.log(ret_ob.value);
+  }
+};
+
+let loc_list = new list();
+let loc_arr = [1, 5, 8, 4, 7, 2, 0, 9];
+
+fill(loc_arr, loc_list);
+empty(loc_list);
