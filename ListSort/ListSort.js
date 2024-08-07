@@ -1,7 +1,6 @@
 /* First stab at a sort list in javascript */
 
 
-
 node_maker = function (value) {
   let node = {
     value: value,
