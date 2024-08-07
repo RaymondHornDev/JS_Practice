@@ -1,5 +1,4 @@
 /* First stab at a sort list in javascript */
-/* First stab at a sort list in javascript */
 
 
 
